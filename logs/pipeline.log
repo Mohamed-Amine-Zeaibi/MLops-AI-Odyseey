@@ -144,3 +144,13 @@ _catboost.CatBoostError: Bad value for num_feature[non_default_doc_idx=0,feature
 2025-12-06 17:31:54,266 - INFO - Sauvegarde du modele...
 2025-12-06 17:31:54,270 - INFO - Pipeline termine avec succes!
 2025-12-06 17:31:54,271 - INFO - Modele sauvegarde: C:\Users\moham\Desktop\MLops Ai odysey\models\best_model.pkl
+2025-12-06 18:44:46,060 - INFO - 127.0.0.1 - - [06/Dec/2025 18:44:46] "POST /predict HTTP/1.1" 200 -
+2025-12-06 18:54:58,514 - INFO - 127.0.0.1 - - [06/Dec/2025 18:54:58] "[33mPOST /predict_smart HTTP/1.1[0m" 404 -
+2025-12-06 19:01:34,525 - INFO - 127.0.0.1 - - [06/Dec/2025 19:01:34] "[33mPOST /predict_smart HTTP/1.1[0m" 404 -
+2025-12-06 19:09:51,658 - INFO - 127.0.0.1 - - [06/Dec/2025 19:09:51] "[33mPOST /predict_smart HTTP/1.1[0m" 404 -
+2025-12-06 19:11:01,577 - INFO - 127.0.0.1 - - [06/Dec/2025 19:11:01] "GET /health HTTP/1.1" 200 -
+2025-12-06 19:11:26,189 - INFO - 127.0.0.1 - - [06/Dec/2025 19:11:26] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+2025-12-06 19:11:37,490 - INFO - 127.0.0.1 - - [06/Dec/2025 19:11:37] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+2025-12-06 19:12:13,143 - INFO - 127.0.0.1 - - [06/Dec/2025 19:12:13] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+2025-12-06 19:18:52,420 - INFO - 127.0.0.1 - - [06/Dec/2025 19:18:52] "[33mPOST /predict_smart HTTP/1.1[0m" 404 -
+2025-12-06 19:19:52,879 - INFO - 127.0.0.1 - - [06/Dec/2025 19:19:52] "[33mGET / HTTP/1.1[0m" 404 -
