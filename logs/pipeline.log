@@ -1,0 +1,146 @@
+2025-12-06 17:23:07,806 - INFO - ============================================================
+2025-12-06 17:23:07,836 - INFO - ============================================================
+2025-12-06 17:27:42,113 - INFO - ============================================================
+2025-12-06 17:27:42,113 - INFO - PIPELINE MLOps - ENTRAINEMENT
+2025-12-06 17:27:42,113 - INFO - ============================================================
+2025-12-06 17:27:42,113 - INFO - Chargement des données...
+2025-12-06 17:27:42,113 - ERROR - Erreur dans le pipeline: Fichier dataset.csv non trouvé. Essayé: C:\Users\moham\Desktop\MLops Ai odysey\dataset.csv et C:\Users\moham\Desktop\MLops Ai odysey\dataset.csv
+2025-12-06 17:28:27,032 - INFO - ============================================================
+2025-12-06 17:28:27,033 - INFO - PIPELINE MLOps - ENTRAINEMENT
+2025-12-06 17:28:27,033 - INFO - ============================================================
+2025-12-06 17:28:27,033 - INFO - Chargement des données...
+2025-12-06 17:28:27,090 - INFO - Donnees pretraitees: (1000, 22)
+2025-12-06 17:28:27,096 - INFO - Donnees splitées sauvegardées
+2025-12-06 17:28:27,097 - INFO - Démarrage de l'entrainement...
+2025-12-06 17:28:27,098 - INFO -   Entrainement catboost...
+2025-12-06 17:28:42,502 - ERROR - Erreur dans le pipeline: 
+All the 5 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+1 fits failed with the following error:
+Traceback (most recent call last):
+  File "_catboost.pyx", line 2534, in _catboost.get_float_feature
+  File "_catboost.pyx", line 1228, in _catboost._FloatOrNan
+  File "_catboost.pyx", line 1023, in _catboost._FloatOrNanFromString
+TypeError: Cannot convert 'Geothermal' to float
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\model_selection\_validation.py", line 859, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python313\Lib\site-packages\catboost\core.py", line 5873, in fit
+    return self._fit(X, y, cat_features, text_features, embedding_features, None, graph, sample_weight, None, None, None, None, baseline,
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     use_best_model, eval_set, verbose, logging_level, plot, plot_file, column_description,
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     verbose_eval, metric_period, silent, early_stopping_rounds,
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     save_snapshot, snapshot_file, snapshot_interval, init_model, callbacks, log_cout, log_cerr)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python313\Lib\site-packages\catboost\core.py", line 2395, in _fit
+    train_params = self._prepare_train_params(
+        X=X, y=y, cat_features=cat_features, text_features=text_features, embedding_features=embedding_features,
+    ...<6 lines>...
+        callbacks=callbacks
+    )
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python313\Lib\site-packages\catboost\core.py", line 2275, in _prepare_train_params
+    train_pool = _build_train_pool(X, y, cat_features, text_features, embedding_features, pairs, graph,
+                                   sample_weight, group_id, group_weight, subgroup_id, pairs_weight,
+                                   baseline, column_description)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python313\Lib\site-packages\catboost\core.py", line 1513, in _build_train_pool
+    train_pool = Pool(X, y, cat_features=cat_features, text_features=text_features, embedding_features=embedding_features, pairs=pairs, graph=graph, weight=sample_weight, group_id=group_id,
+                      group_weight=group_weight, subgroup_id=subgroup_id, pairs_weight=pairs_weight, baseline=baseline)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python313\Lib\site-packages\catboost\core.py", line 855, in __init__
+    self._init(data, label, cat_features, text_features, embedding_features, embedding_features_data, pairs, graph, weight,
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               group_id, group_weight, subgroup_id, pairs_weight, baseline, timestamp, feature_names, feature_tags, thread_count)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python313\Lib\site-packages\catboost\core.py", line 1491, in _init
+    self._init_pool(data, label, cat_features, text_features, embedding_features, embedding_features_data, pairs, graph, weight,
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                    group_id, group_weight, subgroup_id, pairs_weight, baseline, timestamp, feature_names, feature_tags, thread_count)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "_catboost.pyx", line 4329, in _catboost._PoolBase._init_pool
+  File "_catboost.pyx", line 4381, in _catboost._PoolBase._init_pool
+  File "_catboost.pyx", line 4190, in _catboost._PoolBase._init_features_order_layout_pool
+  File "_catboost.pyx", line 3114, in _catboost._set_features_order_data_pd_data_frame
+  File "_catboost.pyx", line 2578, in _catboost.create_num_factor_data
+  File "_catboost.pyx", line 2536, in _catboost.get_float_feature
+_catboost.CatBoostError: Bad value for num_feature[non_default_doc_idx=0,feature_idx=0]="Geothermal": Cannot convert 'Geothermal' to float
+
+--------------------------------------------------------------------------------
+4 fits failed with the following error:
+Traceback (most recent call last):
+  File "_catboost.pyx", line 2534, in _catboost.get_float_feature
+  File "_catboost.pyx", line 1228, in _catboost._FloatOrNan
+  File "_catboost.pyx", line 1023, in _catboost._FloatOrNanFromString
+TypeError: Cannot convert 'Solar' to float
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\model_selection\_validation.py", line 859, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python313\Lib\site-packages\catboost\core.py", line 5873, in fit
+    return self._fit(X, y, cat_features, text_features, embedding_features, None, graph, sample_weight, None, None, None, None, baseline,
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     use_best_model, eval_set, verbose, logging_level, plot, plot_file, column_description,
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     verbose_eval, metric_period, silent, early_stopping_rounds,
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     save_snapshot, snapshot_file, snapshot_interval, init_model, callbacks, log_cout, log_cerr)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python313\Lib\site-packages\catboost\core.py", line 2395, in _fit
+    train_params = self._prepare_train_params(
+        X=X, y=y, cat_features=cat_features, text_features=text_features, embedding_features=embedding_features,
+    ...<6 lines>...
+        callbacks=callbacks
+    )
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python313\Lib\site-packages\catboost\core.py", line 2275, in _prepare_train_params
+    train_pool = _build_train_pool(X, y, cat_features, text_features, embedding_features, pairs, graph,
+                                   sample_weight, group_id, group_weight, subgroup_id, pairs_weight,
+                                   baseline, column_description)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python313\Lib\site-packages\catboost\core.py", line 1513, in _build_train_pool
+    train_pool = Pool(X, y, cat_features=cat_features, text_features=text_features, embedding_features=embedding_features, pairs=pairs, graph=graph, weight=sample_weight, group_id=group_id,
+                      group_weight=group_weight, subgroup_id=subgroup_id, pairs_weight=pairs_weight, baseline=baseline)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python313\Lib\site-packages\catboost\core.py", line 855, in __init__
+    self._init(data, label, cat_features, text_features, embedding_features, embedding_features_data, pairs, graph, weight,
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               group_id, group_weight, subgroup_id, pairs_weight, baseline, timestamp, feature_names, feature_tags, thread_count)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python313\Lib\site-packages\catboost\core.py", line 1491, in _init
+    self._init_pool(data, label, cat_features, text_features, embedding_features, embedding_features_data, pairs, graph, weight,
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                    group_id, group_weight, subgroup_id, pairs_weight, baseline, timestamp, feature_names, feature_tags, thread_count)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "_catboost.pyx", line 4329, in _catboost._PoolBase._init_pool
+  File "_catboost.pyx", line 4381, in _catboost._PoolBase._init_pool
+  File "_catboost.pyx", line 4190, in _catboost._PoolBase._init_features_order_layout_pool
+  File "_catboost.pyx", line 3114, in _catboost._set_features_order_data_pd_data_frame
+  File "_catboost.pyx", line 2578, in _catboost.create_num_factor_data
+  File "_catboost.pyx", line 2536, in _catboost.get_float_feature
+_catboost.CatBoostError: Bad value for num_feature[non_default_doc_idx=0,feature_idx=0]="Solar": Cannot convert 'Solar' to float
+
+2025-12-06 17:31:36,528 - INFO - ============================================================
+2025-12-06 17:31:36,528 - INFO - PIPELINE MLOps - ENTRAINEMENT
+2025-12-06 17:31:36,529 - INFO - ============================================================
+2025-12-06 17:31:36,529 - INFO - Chargement des donnees...
+2025-12-06 17:31:36,536 - INFO - Donnees chargees: 1000 lignes, 12 colonnes
+2025-12-06 17:31:36,562 - INFO - Preparation des donnees...
+2025-12-06 17:31:36,565 - INFO - Entrainement des modeles...
+2025-12-06 17:31:36,566 - INFO -   Entrainement catboost...
+2025-12-06 17:31:51,105 - INFO -     R²: 0.9187, RMSE: 4.26
+2025-12-06 17:31:51,106 - INFO -   Entrainement xgboost...
+2025-12-06 17:31:51,393 - INFO -     R²: 0.8862, RMSE: 5.04
+2025-12-06 17:31:51,393 - INFO -   Entrainement lightgbm...
+2025-12-06 17:31:54,264 - INFO -     R²: 0.9124, RMSE: 4.42
+2025-12-06 17:31:54,265 - INFO - Meilleur modele: catboost (R²: 0.9187)
+2025-12-06 17:31:54,266 - INFO - Sauvegarde du modele...
+2025-12-06 17:31:54,270 - INFO - Pipeline termine avec succes!
+2025-12-06 17:31:54,271 - INFO - Modele sauvegarde: C:\Users\moham\Desktop\MLops Ai odysey\models\best_model.pkl
